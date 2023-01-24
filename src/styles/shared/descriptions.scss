@@ -1,0 +1,21 @@
+%description-14 {
+  font-size: 14px;
+  font-weight: 400;
+  @media (max-width: $bp-phone) {
+    font-size: 10px;
+  }
+}
+%description-16 {
+  font-size: 16px;
+  font-weight: 400;
+  @media (max-width: $bp-phone) {
+    font-size: 11px;
+  }
+}
+%description-18 {
+  font-size: 18px;
+  font-weight: 400;
+  @media (max-width: $bp-phone) {
+    font-size: 12px;
+  }
+}

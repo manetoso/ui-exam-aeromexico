@@ -1,0 +1,25 @@
+$color-white: #fff;
+$color-gray: #cccccc;
+$color-muted: rgba(153, 153, 153, 1);
+$color-black: #081f32;
+$color-purple: rgba(107, 99, 181, 1);
+$color-purple-hover: rgba(107, 99, 181, 0.6);
+$color-normal: rgba(0, 0, 0, 0.6);
+
+$color-input-bg: #f2f3f3;
+$color-input-border: #aeb3b5;
+
+$theme-gryffindor: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
+$theme-slytherin: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
+$theme-hufflepuff: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
+$theme-ravenclaw: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
+
+$card-border-radius-bg: 16px;
+$card-border-radius-sm: 5px;
+
+$button-border-radius-bg: 4px;
+$button-border-radius-sm: 2.56277px;
+
+$bp-phone: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 200px;

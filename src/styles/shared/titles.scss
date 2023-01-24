@@ -1,0 +1,35 @@
+%title-14 {
+  font-size: 14px;
+  font-weight: 600;
+  @media (max-width: $bp-phone) {
+    font-size: 11px;
+  }
+}
+%title-17 {
+  font-size: 17px;
+  font-weight: 600;
+  @media (max-width: $bp-phone) {
+    font-size: 13px;
+  }
+}
+%title-24 {
+  font-size: 24px;
+  font-weight: 600;
+  @media (max-width: $bp-phone) {
+    font-size: 16px;
+  }
+}
+%title-30 {
+  font-size: 30px;
+  font-weight: 600;
+  @media (max-width: $bp-phone) {
+    font-size: 18px;
+  }
+}
+%title-36 {
+  font-size: 36px;
+  font-weight: 700;
+  @media (max-width: $bp-phone) {
+    font-size: 18px;
+  }
+}

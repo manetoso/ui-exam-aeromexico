@@ -1,0 +1,16 @@
+@import './base/reset.scss';
+@import './base/fonts.scss';
+
+@import './utils/variables.scss';
+
+@import './shared/titles.scss';
+@import './shared/descriptions.scss';
+
+body {
+  background: $theme-hufflepuff;
+  font-family: 'Open Sans';
+}
+
+p {
+  @extend %title-36;
+}
