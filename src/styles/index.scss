@@ -6,11 +6,27 @@
 @import './shared/titles.scss';
 @import './shared/descriptions.scss';
 
+@import './components/button.scss';
+@import './components/card.scss';
+@import './components/cardSection.scss';
+@import './components/header.scss';
+@import './components/navbar.scss';
+
 body {
-  background: $theme-hufflepuff;
+  background: #000;
   font-family: 'Open Sans';
+  color: white;
 }
 
 p {
   @extend %title-36;
+}
+
+.background {
+  background-image: url(../assets/hp-bg.webp);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  height: 100vh;
+}
+.main-container {
 }
