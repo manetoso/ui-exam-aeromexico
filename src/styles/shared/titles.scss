@@ -2,7 +2,7 @@
   font-size: 14px;
   font-weight: 600;
   @media (max-width: $bp-phone) {
-    font-size: 14px;
+    font-size: 11px;
   }
 }
 %title-17 {
@@ -22,9 +22,9 @@
 %title-30 {
   font-size: 30px;
   font-weight: 600;
-  line-height: 46px;
+  padding-bottom: 10px;
   @media (max-width: $bp-phone) {
-    font-size: 22px;
+    font-size: 17px;
   }
 }
 %title-36 {
@@ -32,6 +32,6 @@
   font-weight: 700;
   line-height: 46px;
   @media (max-width: $bp-phone) {
-    font-size: 22px;
+    font-size: 17px;
   }
 }

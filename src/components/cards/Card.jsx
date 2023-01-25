@@ -37,7 +37,9 @@ export const Card = () => {
           <h4 className='card-header-label'>{`${
             placeholderData.alive ? 'vivo' : 'finado'
           } / ${placeholderData.hogwartsStudent ? 'estudiante' : 'staff'}`}</h4>
-          <img className='card-header-icon' src={NoBookmarked} alt='bookmark icon' />
+          <button>
+            <img className='card-header-icon' src={NoBookmarked} alt='bookmark icon' />
+          </button>
         </div>
         <h3 className='card-title'>{placeholderData.name}</h3>
         <div className='card-header header-sm'>
@@ -49,7 +51,9 @@ export const Card = () => {
               {placeholderData.hogwartsStudent ? 'estudiante' : 'staff'}
             </h4>
           </span>
-          <img className='card-header-icon' src={NoBookmarked} alt='bookmark icon' />
+          <button>
+            <img className='card-header-icon' src={NoBookmarked} alt='bookmark icon' />
+          </button>
         </div>
         <ul className='card-details'>
           <li className='card-spec'>
