@@ -14,19 +14,19 @@
   width: 288px;
 
   &:focus {
-	outline-color: $color-purple;
+    outline-color: $color-purple;
   }
   &:hover {
     background-color: $color-purple-hover;
   }
   &:active {
-	  background-color: $color-purple;
-	transform: scale(0.99);
+    background-color: $color-purple;
+    transform: scale(0.99);
   }
 
   @media (max-width: $bp-phone) {
     border-radius: $button-border-radius-bg;
-	flex: 1;
+    flex: 1;
     height: 42px;
   }
 }

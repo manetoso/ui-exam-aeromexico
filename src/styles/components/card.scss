@@ -1,8 +1,106 @@
-.card-wrapper{}
-.card-image{}
-.card-body{}
-.card-label{}
-.card-title{}
-.card-details{}
-.card-spec{}
-.card-icon{}
+.card-wrapper {
+  border-radius: $card-border-radius-bg;
+  display: flex;
+  max-width: 515px;
+  overflow: hidden;
+
+  @media (max-width: $bp-phone) {
+    border-radius: $card-border-radius-sm;
+    flex-direction: column;
+    max-width: 250px;
+  }
+}
+.card-image-container {
+  display: flex;
+  flex: 1.25;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.card-image {
+  border-radius: 100%;
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
+  object-position: top;
+
+    @media (max-width: $bp-phone) {
+		height: 140px;
+  		width: 140px;
+    }
+}
+.card-body {
+  background-color: $color-white;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  padding: 1.5em;
+
+  @media (max-width: $bp-phone) {
+    padding: 1em;
+  }
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-lg {
+  display: flex;
+
+  @media (max-width: $bp-phone) {
+    display: none;
+  }
+}
+.header-sm {
+  display: none;
+
+  @media (max-width: $bp-phone) {
+    display: flex;
+  }
+}
+.card-header-label {
+  @extend %title-14;
+
+  text-transform: uppercase;
+  color: $color-muted;
+}
+.card-header-icon {
+}
+.card-title {
+  @extend %title-30;
+
+  @media (max-width: $bp-phone) {
+    text-align: center;
+  }
+}
+.card-details {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+
+  @media (max-width: $bp-phone) {
+    display: none;
+  }
+}
+.card-spec {
+  @extend %description-14;
+
+  span {
+    color: #374a59;
+  }
+}
+
+.card-gryffindor {
+  background: $theme-gryffindor;
+}
+.card-hufflepuff {
+  background: $theme-hufflepuff;
+}
+.card-ravenclaw {
+  background: $theme-ravenclaw;
+}
+.card-slytherin {
+  background: $theme-slytherin;
+}
