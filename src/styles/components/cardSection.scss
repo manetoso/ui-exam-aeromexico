@@ -33,3 +33,17 @@
     width: 100%;
   }
 }
+
+.loading {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.loader {
+  animation: loader-animation 1s linear infinite forwards;
+}
+
+@keyframes loader-animation {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,6 +1,7 @@
 .card-wrapper {
   border-radius: $card-border-radius-bg;
   display: flex;
+  width: 100%;
   max-width: 515px;
   overflow: hidden;
 
@@ -11,6 +12,7 @@
   }
 }
 .card-image-container {
+  background-color: #374a59;
   align-items: center;
   display: flex;
   flex: 1.25;
