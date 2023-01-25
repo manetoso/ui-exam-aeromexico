@@ -4,9 +4,14 @@
   flex-direction: column;
   gap: 1em;
   padding-block: 2em;
+  padding-bottom: 8em;
+
+  @media (max-width: $bp-phone) {
+    padding-bottom: 2em;
+  }
 }
 .header-logo {
-	height: clamp(70px, 10vw, 100px)
+  height: clamp(70px, 10vw, 100px);
 }
 .header-title {
   @extend %title-36;
