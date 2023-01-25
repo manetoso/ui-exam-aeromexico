@@ -1,1 +1,36 @@
-.button {}
+.button {
+  @extend %title-17;
+
+  background-color: $color-normal;
+  border-radius: $button-border-radius-sm;
+  border: 3px solid $color-purple;
+  color: white;
+  cursor: pointer;
+  height: 67px;
+  letter-spacing: 0.2em;
+  outline: 1px solid transparent;
+  text-transform: uppercase;
+  transition: ease-in-out 150ms;
+  width: 288px;
+
+  &:focus {
+	outline-color: $color-purple;
+  }
+  &:hover {
+    background-color: $color-purple-hover;
+  }
+  &:active {
+	  background-color: $color-purple;
+	transform: scale(0.99);
+  }
+
+  @media (max-width: $bp-phone) {
+    border-radius: $button-border-radius-bg;
+	flex: 1;
+    height: 42px;
+  }
+}
+
+.btn-active {
+  background-color: $color-purple;
+}

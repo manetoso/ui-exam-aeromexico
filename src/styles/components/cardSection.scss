@@ -1,3 +1,15 @@
-.cards-container{}
-.cards-buttons{}
-.cards-wrapper{}
+.cards-container {
+}
+.cards-buttons {
+//   background-color: tomato;
+  max-width: 693px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $bp-phone) {
+    padding-inline: 1.5em;
+    gap: 1em;
+  }
+}
+.cards-wrapper {
+}
