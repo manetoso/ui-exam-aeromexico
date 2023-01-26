@@ -25,6 +25,10 @@
   object-fit: cover;
   object-position: top;
   width: 100%;
+  background: url('../../assets/image-placeholder.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: $bp-phone) {
     width: 70%;

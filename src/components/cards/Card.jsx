@@ -49,7 +49,7 @@ export const Card = ({ data }) => {
         <img
           className='card-image'
           src={`${image}`}
-          alt='character'
+          alt='.'
         />
       </div>
       <div className='card-body'>

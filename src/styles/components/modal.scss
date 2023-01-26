@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 1.5em;
   margin: 10% auto;
-  max-height: 80%;
+  max-height: 60vh;
   overflow: auto;
   padding: 20px;
   width: 50%;
@@ -122,4 +122,39 @@
 .modal-checkbox-label {
   cursor: pointer;
   font-size: 14px;
+}
+.modal-file-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  width: 100%;
+
+  & img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 100%;
+    width: 30%;
+    background: url('../../assets/image-placeholder.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.modal-input-file {
+  border: 3px dashed $color-purple;
+  border-radius: $card-border-radius-sm;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding-block: 1em;
+  width: 100%;
+
+  & input {
+    display: none;
+  }
+}
+
+.btn-submit {
+  padding-block: 1em;
 }
