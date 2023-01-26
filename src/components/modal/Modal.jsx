@@ -1,8 +1,17 @@
-import { useForm } from '../../hooks/useForm';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { toggleModal } from '../../redux/slices/modalSlice';
+import { useForm } from '../../hooks/useForm'
+;
 import XIcon from '../../assets/icons/x.svg';
 import PlaceholderImage from '../../assets/image-placeholder.svg';
 
-export const Modal = ({ isOpen, toggleIsOpen }) => {
+export const Modal = ({addCharacter}) => {
+  // OBSERVES THE isOpen VARIABLE FROM REDUX STORE
+  const { isOpen } = useSelector(store => store.modal);
+  // INITIALIZE REDUX DISPATCH
+  const dispatch = useDispatch();
+  // CUSTOM HOOK TO HANDLE THE FORM DATA
   const {
     formData,
     onChange,
@@ -30,19 +39,27 @@ export const Modal = ({ isOpen, toggleIsOpen }) => {
     file,
     image,
   } = formData;
-  const handleSubmit = async (e) => {
-	await onSubmit(e)
-	toggleIsOpen()
+
+  // LOCAL SUBMIT METHOD
+  const handleSubmit = async e => {
+    const newCharacter = await onSubmit(e);
+    addCharacter(newCharacter)
+    handleModal();
+    alert('Character Add it!')
+  };
+  // MODAL TOGGLER
+  const handleModal = () => {
+    dispatch(toggleModal())
   }
   return (
     <div
       className={`modal ${isOpen ? 'show-modal' : 'hidde-modal'}`}
-      onClick={toggleIsOpen}>
+      onClick={handleModal}>
       <form onSubmit={handleSubmit}>
         <div className='modal-body' onClick={e => e.stopPropagation()}>
           <div className='modal-header'>
             <h1>Agregar un personaje</h1>
-            <button className='modal-close-button' onClick={toggleIsOpen}>
+            <button className='modal-close-button' onClick={handleModal}>
               <img src={XIcon} alt='close icon' />
             </button>
           </div>
@@ -63,6 +80,7 @@ export const Modal = ({ isOpen, toggleIsOpen }) => {
               <label className='modal-input-label'>Cumplea&ntilde;os</label>
               <input
                 required
+                autoComplete='off'
                 className='modal-general-input'
                 name='dateOfBirth'
                 onChange={onChange}
@@ -74,6 +92,7 @@ export const Modal = ({ isOpen, toggleIsOpen }) => {
               <label className='modal-input-label'>Color de ojos</label>
               <input
                 required
+                autoComplete='off'
                 className='modal-general-input'
                 name='eyeColour'
                 onChange={onChange}
@@ -85,6 +104,7 @@ export const Modal = ({ isOpen, toggleIsOpen }) => {
               <label className='modal-input-label'>Color de pelo</label>
               <input
                 required
+                autoComplete='off'
                 className='modal-general-input'
                 name='hairColour'
                 onChange={onChange}

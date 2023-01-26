@@ -10,6 +10,8 @@ const types = {
   START_LOADING: '[FETCH] START LOADING',
   FINISH_LOADING: '[FETCH] FINISH LOADING',
   SET_SELECTED: '[UI] SET NEW SELECTED DATA',
+  SET_NEW_STAFF_CHARACTER: '[UI] SET NEW STAFF CHARACTER',
+  SET_NEW_STUDENT_CHARACTER: '[UI] SET NEW STUDENT CHARACTER',
 };
 // REDUCER INITIAL VALUE
 const initialValue = {
@@ -46,6 +48,16 @@ const reducer = (state, action) => {
         ...state,
         selectedData: action.payload,
       };
+    case types.SET_NEW_STAFF_CHARACTER:
+      return {
+        ...state,
+        staffData: [...state.staffData, action.payload],
+      };
+    case types.SET_NEW_STUDENT_CHARACTER:
+      return {
+        ...state,
+        studentsData: [...state.studentsData, action.payload],
+      };
 
     default:
       return state;
@@ -56,6 +68,19 @@ const reducer = (state, action) => {
 export const useFetchData = () => {
   // REDUCER
   const [state, dispatch] = useReducer(reducer, initialValue);
+
+  // ADDS A NEW CHARACTER TO THE STATE
+  const addCharacter = characterData => {
+    // ASK IF THE CHARACTER IS A STUDENT O STAFF PERSONAL
+    if (characterData.hogwartsStudent) {
+      dispatch({
+        type: types.SET_NEW_STUDENT_CHARACTER,
+        payload: characterData,
+      });
+    } else {
+      dispatch({ type: types.SET_NEW_STAFF_CHARACTER, payload: characterData });
+    }
+  };
 
   // CHANGE SELECTED DATA
   // STAFF OR STUDENTS
@@ -97,5 +122,6 @@ export const useFetchData = () => {
   return {
     state,
     changeSelected,
+    addCharacter,
   };
 };

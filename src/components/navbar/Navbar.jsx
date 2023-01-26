@@ -1,17 +1,25 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { toggleModal } from '../../redux/slices/modalSlice';
+
+import { FavList } from './FavList';
+
 import BookmarkIcon from '../../assets/icons/bookmark-fill-white.svg';
 import AddIcon from '../../assets/icons/add-character-fill.svg';
-import { useState } from 'react';
-import { FavList } from './FavList';
-import { Modal } from '../modal/Modal';
 
 export const Navbar = () => {
+  // INITIALIZE REDUX DISPATCH
+  const dispatch = useDispatch();
+  // STATE OF FAVLIST
   const [showFavList, setShowFavList] = useState(false);
-  const [showModal, setShowModal] = useState(false)
+  // FAVLIST TOGGLER
   const toggleFavList = () => {
     setShowFavList(!showFavList);
   };
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  // MODAL TOGGLER
+  const handleModal = () => {
+    dispatch(toggleModal());
   };
 
   return (
@@ -28,7 +36,7 @@ export const Navbar = () => {
               />
             </button>
             <div className='separator' />
-            <button onClick={toggleModal} className='nav-button'>
+            <button onClick={handleModal} className='nav-button'>
               <span className='nav-button-label'>agregar</span>
               <img className='nav-button-icon' src={AddIcon} alt='add icon' />
             </button>
@@ -36,7 +44,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={showModal} toggleIsOpen={toggleModal} />
     </nav>
   );
 };
