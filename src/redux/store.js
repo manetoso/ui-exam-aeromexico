@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from './slices/counterSlice';
+import { favlistReducer } from './slices/favlistSlice';
 
+// CONFIGURATION OF THE REDUX STORE
+// WE CAN ADD AS MANY REDUCERS AS NEED IT
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    favlist: favlistReducer
   },
 });

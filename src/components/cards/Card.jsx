@@ -1,9 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavlist } from '../../redux/slices/favlistSlice';
 import NoBookmarked from './../../assets/icons/bookmark-outline.svg';
-// import Bookmarked from './../../assets/icons/bookmark-fill-black.svg';
+import Bookmarked from './../../assets/icons/bookmark-fill-black.svg';
 
 export const Card = ({ data }) => {
+  // DESTRUCTURING DATA TO HAVE AUTOCOMPLETE
   const {
-    // id,
+    id,
     name,
     // species,
     gender,
@@ -21,6 +24,25 @@ export const Card = ({ data }) => {
     alive,
     image,
   } = data;
+
+  // INITIALIZATION OF useSelector
+  // PULLS THE DESIRE DATA FROM STORE => REDUCER => ELEMENT
+  const { list } = useSelector(store => store.favlist);
+  // INITILIZATION OF useDispatch
+  // LET US EXECUTE THE ACTIONS DECLAIRE ON THE SLICE
+  const dispatch = useDispatch()
+
+  // METHOD TO REMOVE ELEMENT FROM FAVLIST
+  // IT BUILDS A OBJECT WITH THE DATA NEED IT FOR THE FAVLIST
+  const handleAddToFavlist = () => {
+    const character = {
+      id,
+      name,
+      image
+    }
+    dispatch(addToFavlist(character))
+  }
+
   return (
     <div className='card-wrapper'>
       <div className={`card-image-container card-${house.toLowerCase()}`}>
@@ -35,10 +57,10 @@ export const Card = ({ data }) => {
           <h4 className='card-header-label'>{`${
             alive ? 'vivo' : 'finado'
           } / ${hogwartsStudent ? 'estudiante' : 'staff'}`}</h4>
-          <button>
+          <button onClick={handleAddToFavlist}>
             <img
               className='card-header-icon'
-              src={NoBookmarked}
+              src={list.some(item => item.id === id) ? Bookmarked : NoBookmarked}
               alt='bookmark icon'
             />
           </button>
@@ -53,10 +75,10 @@ export const Card = ({ data }) => {
               {hogwartsStudent ? 'estudiante' : 'staff'}
             </h4>
           </span>
-          <button>
+          <button onClick={handleAddToFavlist}>
             <img
               className='card-header-icon'
-              src={NoBookmarked}
+              src={list.some(item => item.id === id) ? Bookmarked : NoBookmarked}
               alt='bookmark icon'
             />
           </button>
