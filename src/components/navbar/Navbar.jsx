@@ -2,11 +2,16 @@ import BookmarkIcon from '../../assets/icons/bookmark-fill-white.svg';
 import AddIcon from '../../assets/icons/add-character-fill.svg';
 import { useState } from 'react';
 import { FavList } from './FavList';
+import { Modal } from '../modal/Modal';
 
 export const Navbar = () => {
   const [showFavList, setShowFavList] = useState(false);
+  const [showModal, setShowModal] = useState(false)
   const toggleFavList = () => {
     setShowFavList(!showFavList);
+  };
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   return (
@@ -23,7 +28,7 @@ export const Navbar = () => {
               />
             </button>
             <div className='separator' />
-            <button className='nav-button'>
+            <button onClick={toggleModal} className='nav-button'>
               <span className='nav-button-label'>agregar</span>
               <img className='nav-button-icon' src={AddIcon} alt='add icon' />
             </button>
@@ -31,6 +36,7 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
+      <Modal isOpen={showModal} toggleIsOpen={toggleModal} />
     </nav>
   );
 };
