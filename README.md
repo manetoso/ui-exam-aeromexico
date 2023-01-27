@@ -10,12 +10,12 @@ Develop by **Emmanuel Cortes**
 
 ## TABLE OF CONTENT
 
-1. <a href="test-questions">TEST QUESTIONS</a>
-2. <a href="server">SERVER</a>
-3. <a href="run-dev">INSTRUCTIONS TO RUN THE APP IN DEVELOPMENT</a>
-4. <a href="run-tests">INSTRUCTIONS TO RUN TESTS</a>
-5. <a href="tasks-list">TASKS LIST</a>
-6. <a href="dependencies">DEPENDENCIES</a>
+1. <a href="#test-questions">TEST QUESTIONS</a>
+2. <a href="#server">SERVER</a>
+3. <a href="#run-dev">INSTRUCTIONS TO RUN THE APP IN DEVELOPMENT</a>
+4. <a href="#run-tests">INSTRUCTIONS TO RUN TESTS</a>
+5. <a href="#tasks-list">TASKS LIST</a>
+6. <a href="#dependencies">DEPENDENCIES</a>
 
 ---
 
