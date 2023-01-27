@@ -49,7 +49,7 @@ export const Card = ({ data }) => {
       <div className={`card-image-container card-${house.toLowerCase()}`}>
         <img className='card-image' src={`${image}`} alt='.' />
       </div>
-      <div className='card-body'>
+      <div className={`card-body ${!alive && 'dead'}`}>
         <div className='card-header header-lg'>
           <h4 className='card-header-label'>{`${alive ? 'vivo' : 'finado'} / ${
             hogwartsStudent ? 'estudiante' : 'staff'

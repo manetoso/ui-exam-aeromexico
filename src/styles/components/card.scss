@@ -46,6 +46,9 @@
     padding: 1em;
   }
 }
+.dead {
+  background-color: $color-gray;
+}
 .card-header {
   display: flex;
   justify-content: space-between;
