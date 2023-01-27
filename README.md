@@ -22,7 +22,7 @@ Develop by **Emmanuel Cortes**
 <h2 id="test-questions">TEST QUESTIONS</h2>
 
 1. **¿Qué es lo que más te gustó de tu desarrollo?**
-	> *Debido a que actualmenete se me dificultan menos los estilos y el responsive encuento mayor reto y satisfacción implementando animaciones e interacciones que llamen la atención del usuario.*
+	> *Debido a que actualmenete se me dificultan menos los estilos y el responsive encuentro mayor reto y satisfacción implementando animaciones e interacciones que llamen la atención del usuario.*
 2. **Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras
 hecho?**
 	> *Creo que hay varias cosas que me hubiera gustado poder hacer, pero las más notorias serían añadir animaciones cuando los componentes se montan y se desmontan para hacer que la app tuviera una mejor fluides visual, implementar un toast para notificar al usuario de las diferentes acciones que hiciera, crear una forma de guardar las imágenes de nuevos personajes permanentemente y finalmente crear un formulario reactivo, que notifique visualmente al usuario de cualquier error al instante.*
@@ -58,10 +58,10 @@ And open 2 terminals and tap these commands on each window:
 
 The tests where develop with [Jest](https://jestjs.io/) with the default configuration of [create-react-app](https://create-react-app.dev/).
 
-1. Should be on the proyect folder.
+1. Should be on the proyect folder on a terminal.
 2. Execute the command <mark>npm run test</mark>.
 
-By this moment Jest will promp their cli, the keys that can be taped are:
+By this moment Jest will promp their cli, the keys that can tape are:
 
 1. <mark>a</mark> to run all tests.
 2. <mark>f</mark> to run only failde tests.
