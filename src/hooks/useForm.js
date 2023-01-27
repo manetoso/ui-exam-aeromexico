@@ -18,13 +18,6 @@ export const useForm = (initialState = {}) => {
       [target.name]: target.value,
     }));
   };
-  // onChange METHOD FOR RADIO BUTTONS WHERE IT'S VALUE IS A STRING
-  const onRadioStringChange = ({ target }) => {
-    setFormData(prev => ({
-      ...prev,
-      [target.name]: target.value,
-    }));
-  };
   // onChange METHOD FOR RADIO BUTTONS WHERE IT'S VALUE IS A BOOLEAN
   const onRadioBoolChange = ({ target }) => {
     setFormData(prev => ({
@@ -52,6 +45,7 @@ export const useForm = (initialState = {}) => {
       const newCharacter = {
         ...formData,
         house: houses[Math.floor(Math.random() * (houses.length - 1 + 1) + 0)],
+        alive: true,
       };
       // POST METHOD
       const response = await fetch(
@@ -76,11 +70,11 @@ export const useForm = (initialState = {}) => {
   };
 
   return {
+    ...formData,
     formData,
     onChange,
     onFileChange,
     onRadioBoolChange,
-    onRadioStringChange,
     resetForm,
     onSubmit,
   };

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing in Navbar.jsx should match the snapshot 1`] = `
+<div>
+  <nav
+    class="nav"
+  >
+    <div
+      class="nav-container"
+    >
+      <div
+        class="nav-wrapper"
+      >
+        <div
+          class="nav-buttons-wrapper"
+        >
+          <button
+            class="nav-button"
+          >
+            <span
+              class="nav-button-label"
+            >
+              favoritos
+            </span>
+            <img
+              alt="bookmark icon"
+              class="nav-button-icon"
+              src="bookmark-fill-white.svg"
+            />
+          </button>
+          <div
+            class="separator"
+          />
+          <button
+            class="nav-button"
+          >
+            <span
+              class="nav-button-label"
+            >
+              agregar
+            </span>
+            <img
+              alt="add icon"
+              class="nav-button-icon"
+              src="add-character-fill.svg"
+            />
+          </button>
+          <div
+            class="favlist hidde-fav"
+          >
+            <div
+              class="fav-item"
+            >
+              <img
+                alt="character"
+                class="item-image"
+                src="image-placeholder.svg"
+              />
+              <h3
+                class="item-name"
+              >
+                Lista Vacia
+              </h3>
+            </div>
+          </div>
+          <div
+            class="favlist-bg hidde-bg"
+          />
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

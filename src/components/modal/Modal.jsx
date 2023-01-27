@@ -1,23 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toggleModal } from '../../redux/slices/modalSlice';
-import { useForm } from '../../hooks/useForm'
-;
+import { useForm } from '../../hooks/useForm';
 import XIcon from '../../assets/icons/x.svg';
 import PlaceholderImage from '../../assets/image-placeholder.svg';
 
-export const Modal = ({addCharacter}) => {
+export const Modal = ({ addCharacter }) => {
   // OBSERVES THE isOpen VARIABLE FROM REDUX STORE
   const { isOpen } = useSelector(store => store.modal);
   // INITIALIZE REDUX DISPATCH
   const dispatch = useDispatch();
   // CUSTOM HOOK TO HANDLE THE FORM DATA
   const {
-    formData,
+    name,
+    dateOfBirth,
+    eyeColour,
+    hairColour,
+    gender,
+    hogwartsStudent,
+    file,
+    image,
     onChange,
     onFileChange,
     onRadioBoolChange,
-    onRadioStringChange,
     onSubmit,
   } = useForm({
     name: '',
@@ -29,33 +34,22 @@ export const Modal = ({addCharacter}) => {
     file: '',
     image: '',
   });
-  const {
-    name,
-    dateOfBirth,
-    eyeColour,
-    hairColour,
-    gender,
-    hogwartsStudent,
-    file,
-    image,
-  } = formData;
 
   // LOCAL SUBMIT METHOD
   const handleSubmit = async e => {
     const newCharacter = await onSubmit(e);
-    addCharacter(newCharacter)
+    addCharacter(newCharacter);
     handleModal();
-    alert('Character Add it!')
   };
   // MODAL TOGGLER
   const handleModal = () => {
-    dispatch(toggleModal())
-  }
+    dispatch(toggleModal());
+  };
   return (
     <div
       className={`modal ${isOpen ? 'show-modal' : 'hidde-modal'}`}
       onClick={handleModal}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-label='form'>
         <div className='modal-body' onClick={e => e.stopPropagation()}>
           <div className='modal-header'>
             <h1>Agregar un personaje</h1>
@@ -124,7 +118,7 @@ export const Modal = ({addCharacter}) => {
                     name='gender'
                     value='female'
                     checked={gender === 'female'}
-                    onChange={onRadioStringChange}
+                    onChange={onChange}
                   />
                   <label htmlFor='female' className='modal-checkbox-label'>
                     Mujer
@@ -139,7 +133,7 @@ export const Modal = ({addCharacter}) => {
                     name='gender'
                     value='male'
                     checked={gender === 'male'}
-                    onChange={onRadioStringChange}
+                    onChange={onChange}
                   />
                   <label htmlFor='male' className='modal-checkbox-label'>
                     Hombre
@@ -188,7 +182,13 @@ export const Modal = ({addCharacter}) => {
               <img src={`${image}`} alt='.' placeholder={PlaceholderImage} />
             )}
             <label className='modal-input-file'>
-              <input required type='file' name='file' onChange={onFileChange} />
+              <input
+                required
+                data-testid='file-uploader'
+                type='file'
+                name='file'
+                onChange={onFileChange}
+              />
               {file === '' && <span>Fotograf&iacute;a</span>}
               {file !== '' && <span>{file.name}</span>}
             </label>

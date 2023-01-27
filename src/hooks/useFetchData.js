@@ -110,9 +110,7 @@ export const useFetchData = () => {
     dispatch({ type: types.START_LOADING });
     await fetchData('students');
     await fetchData('staff');
-    setTimeout(() => {
-      dispatch({ type: types.FINISH_LOADING });
-    }, 1500);
+    dispatch({ type: types.FINISH_LOADING });
   };
 
   useEffect(() => {

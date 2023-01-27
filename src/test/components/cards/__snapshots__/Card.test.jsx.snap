@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing in Card.jsx should match the snapshot 1`] = `
+<div>
+  <div
+    class="card-wrapper"
+  >
+    <div
+      class="card-image-container card-gryffindor"
+    >
+      <img
+        alt="."
+        class="card-image"
+        src="http://hp-api.herokuapp.com/images/harry.jpg"
+      />
+    </div>
+    <div
+      class="card-body"
+    >
+      <div
+        class="card-header header-lg"
+      >
+        <h4
+          class="card-header-label"
+        >
+          vivo / estudiante
+        </h4>
+        <button>
+          <img
+            alt="bookmark icon"
+            class="card-header-icon"
+            src="bookmark-outline.svg"
+          />
+        </button>
+      </div>
+      <h3
+        class="card-title"
+      >
+        Harry Potter
+      </h3>
+      <div
+        class="card-header header-sm"
+      >
+        <span>
+          <h4
+            class="card-header-label"
+          >
+            vivo
+          </h4>
+          <h4
+            class="card-header-label"
+          >
+            estudiante
+          </h4>
+        </span>
+        <button>
+          <img
+            alt="bookmark icon"
+            class="card-header-icon"
+            src="bookmark-outline.svg"
+          />
+        </button>
+      </div>
+      <ul
+        class="card-details"
+      >
+        <li
+          class="card-spec"
+        >
+          <strong>
+            Cumpleaños:
+          </strong>
+           
+          <span>
+            31-07-1980
+          </span>
+        </li>
+        <li
+          class="card-spec"
+        >
+          <strong>
+            Genero:
+          </strong>
+           
+          <span>
+            male
+          </span>
+        </li>
+        <li
+          class="card-spec"
+        >
+          <strong>
+            Color de ojos:
+          </strong>
+           
+          <span>
+            green
+          </span>
+        </li>
+        <li
+          class="card-spec"
+        >
+          <strong>
+            Color de pelo:
+          </strong>
+           
+          <span>
+            black
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

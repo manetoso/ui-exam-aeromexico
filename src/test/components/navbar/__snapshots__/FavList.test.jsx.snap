@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing in FavList.jsx should match the snapshot 1`] = `
+<div>
+  <div
+    class="favlist hidde-fav"
+  >
+    <div
+      class="fav-item"
+    >
+      <img
+        alt="character"
+        class="item-image"
+        src="image-placeholder.svg"
+      />
+      <h3
+        class="item-name"
+      >
+        Lista Vacia
+      </h3>
+    </div>
+  </div>
+  <div
+    class="favlist-bg hidde-bg"
+  />
+</div>
+`;
