@@ -5,11 +5,13 @@ import { useFetchData } from '../../hooks/useFetchData';
 
 import Spinner from './../../assets/icons/spinner.svg';
 
+// SPINNER COMPONENT
 const CardSpinner = () => (
   <img className='loader' src={Spinner} alt='loading symbol' />
 );
 
 export const CardsSection = () => {
+  // HOOK INITIALIZATION
   const { state, changeSelected, addCharacter } = useFetchData();
   const { staffData, studentsData, selectedData, isLoading } = state;
   return (

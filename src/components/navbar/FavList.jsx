@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromFavlist } from '../../redux/slices/favlistSlice';
+
 import Trash from '../../assets/icons/trash.svg';
 import Placeholder from '../../assets/image-placeholder.svg';
 

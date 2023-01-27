@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { toggleModal } from '../../redux/slices/modalSlice';
+
 import { useForm } from '../../hooks/useForm';
+
 import XIcon from '../../assets/icons/x.svg';
 import PlaceholderImage from '../../assets/image-placeholder.svg';
 
