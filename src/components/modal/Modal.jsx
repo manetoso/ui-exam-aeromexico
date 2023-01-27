@@ -35,13 +35,6 @@ export const Modal = ({ addCharacter }) => {
     file: '',
     image: '',
   });
-
-  // LOCAL SUBMIT METHOD
-  const handleSubmit = async e => {
-    const newCharacter = await onSubmit(e);
-    addCharacter(newCharacter);
-    handleModal();
-  };
   // MODAL TOGGLER
   const handleModal = () => {
     dispatch(toggleModal());
@@ -50,7 +43,7 @@ export const Modal = ({ addCharacter }) => {
     <div
       className={`modal ${isOpen ? 'show-modal' : 'hidde-modal'}`}
       onClick={handleModal}>
-      <form onSubmit={handleSubmit} aria-label='form'>
+      <form onSubmit={(e) => onSubmit(e, addCharacter, handleModal)} aria-label='form'>
         <div className='modal-body' onClick={e => e.stopPropagation()}>
           <div className='modal-header'>
             <h1>Agregar un personaje</h1>

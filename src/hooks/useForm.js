@@ -37,7 +37,7 @@ export const useForm = (initialState = {}) => {
   };
 
   // onSubmit METHOD
-  const onSubmit = async e => {
+  const onSubmit = async (e, addCharacter, handleModal) => {
     e.preventDefault();
     try {
       const houses = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'];
@@ -48,7 +48,7 @@ export const useForm = (initialState = {}) => {
         alive: true,
       };
       // POST METHOD
-      const response = await fetch(
+      await fetch(
         `${API_BASE_URL}/${
           newCharacter.hogwartsStudent ? 'students' : 'staff'
         }`,
@@ -60,11 +60,13 @@ export const useForm = (initialState = {}) => {
           body: JSON.stringify(newCharacter),
         }
       );
-      const data = await response.json();
-      resetForm();
       // RETURNS THE CHARACTER CREATED
-      return data;
+      addCharacter(newCharacter);
+      resetForm();
+      handleModal()
     } catch (error) {
+      console.log('>>> Error');
+      console.log(error);
       throw new Error('Something went wrong creating new Character');
     }
   };
